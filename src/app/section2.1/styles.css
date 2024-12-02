@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Main container styles */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  /* Business info section */
+  .business-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    padding: 0 20px;
+  }
+  
+  .InfoOne {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    max-width: 600px;
+  }
+  
+  .InfoOne span:first-child {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000D51;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .InfoOne span:last-child {
+    font-size: 40px;
+    font-weight: 700;
+    color: #000D51;
+    line-height: 1.2;
+  }
+  
+  .business-info p:last-child {
+    display: flex;
+    align-items: flex-start;
+    max-width: 400px;
+  }
+  
+  .BussIcon {
+    width: 43px;
+    height: 45px;
+    margin-right: 12px;
+    margin-top: 4px;
+  }
+  
+  .business-info p:last-child span {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+  }
+  
+  /* Business gallery section */
+  .business-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 220px);
+    gap: 16px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  /* Box styles */
+  .box {
+    position: relative;
+    width: 100%; /* Ensures the box fills available space */
+    height: 220px;
+    overflow: hidden;
+  }
+  
+  .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .box:hover img {
+    transform: scale(1.05);
+  }
+  
+  .box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    pointer-events: none;
+  }
+  
+  .box-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    z-index: 1;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 1200px) {
+    .business-gallery {
+      grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+      gap: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .business-gallery {
+      grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+      gap: 20px;
+    }
+  
+    .business-info {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .business-info p:last-child {
+      max-width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .business-gallery {
+      grid-template-columns: 1fr; /* 1 card per row */
+      gap: 20px;
+    }
+  
+    .box {
+      height: auto; /* Adjust height dynamically for smaller screens */
+      aspect-ratio: 4 / 3; /* Ensures consistent aspect ratio */
+    }
+  
+    .InfoOne span:last-child {
+      font-size: 32px;
+    }
+  }
+  
